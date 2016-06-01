@@ -60,7 +60,14 @@
     UIImageView *tableImage = [FactoryUI createImageViewWithFrame:CGRectMake(10, CGRectGetMaxY(top.frame) + 5, SCREENW - 20, SCREENW/2) imageName:@"Ratehuilv"];
     [self.view addSubview:tableImage];
     
-    _tableView = [UITableView alloc]initWithFrame:CGRectMake(0, GRectGetMaxY(top.frame) + 5, SCREENW, <#CGFloat height#>) style:<#(UITableViewStyle)#>
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(top.frame) + 5, SCREENW, SCREENH) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerClass:[RateCell class] forCellReuseIdentifier:@"RateCell"];
+    [self.view addSubview:_tableView];
+    UIImageView *tableTop = [FactoryUI createImageViewWithFrame:CGRectMake(20, 0, SCREENW - 40, 30) imageName:@"RateTop"];
+    _tableView.tableHeaderView = tableTop;
+
     
     
     
