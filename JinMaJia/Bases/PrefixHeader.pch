@@ -1,0 +1,81 @@
+//
+//  PrefixHeader.pch
+//  JMJ
+//
+//  Created by 周哥哥 on 16/4/19.
+//  Copyright © 2016年 sunli. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+//接口
+//首页快讯接口
+//#define FastNewsUrl @"http://192.168.0.108:8080/jmj/app/news?keywords=原油沥青现货白银黄金"
+#define ComainURl @"http://192.168.0.243:8080/jmj/"
+
+#define FastNewsUrl @"app/news/"
+//股票查询接 sh601009
+#define TicketUrl @"app/share?code=%@"
+//股票接口
+#define TicketFirst @"http://platform.sina.com.cn/finance_client/getBKSymbol?page=1&num=50&node=new_stock&sort=changepercent&asc=0&type=cn_sina&app_key=4135432745&from=7040393012&uid=&zxtype=&imei=a9dbeeb48154a07244875ee80ceaac3b&wm=b122&chwm=3045_0100"
+//微盘
+#define WeiPanUrl @"http://weipan.lswjy.cn/?P=login"
+//老师接口
+#define TeacherUrl @"analyst/select_app"
+//课程表接口
+#define TableUrl @"course/select_app"
+//喊单http://127.0.0.1:8080/jmj/order/select_order_app?pageNo=1
+#define OrderUrl @"order/select_order_app?pageNo=1"
+//行情分析
+#define ConditionUrl @"http://h5.tianhongjijin.com.cn/server/publics/user/viewFund/968006/days/20"
+//汇率
+#define rateUrl @"http://cer.nineton.cn/get_bank_rate/BC"
+
+//登录接口 拼接 @"username":userName,@"password":password
+#define LoginUrl @"user/login"
+
+//短信验证码 telephone=18221633608
+#define MessagePwdUrl @"sms/tel_code"
+
+//注册接口http://127.0.0.1:8080/jmj/user/register?telephone=18221633608&tel_code=111111&password=123
+#define registerUrl @"user/register"
+
+//注册详细的接口 username  用户名
+//nickname  昵称
+//gender 性别
+//qq  qq号
+//gid  代理商id
+#define RegisterDetailUrl @"user/perfectInfo"
+
+
+//代理商接口
+#define AgentUrl @"agent/findAll"
+
+
+//头文件
+#import "FactoryUI.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "AFNetworking.h"
+#import "Carousel.h"
+
+//全局宏定义
+#define SCREENW    ([UIScreen mainScreen].bounds.size.width)
+#define SCREENH ([UIScreen mainScreen].bounds.size.height - 64)
+
+#define RGB(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a];
+
+
+
+
+#endif
+
+
+
+#endif /* PrefixHeader_pch */
