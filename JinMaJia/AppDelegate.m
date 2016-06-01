@@ -39,7 +39,7 @@
                                               categories:nil];
     }
     
-    
+    [JPUSHService setupWithOption:nil appKey:@"fa216d67c9fb327d7d6e3e8d" channel:@"Publish channel" apsForProduction:NO];
     return YES;
 }
 //通过设备的token来注册远程推送通知
